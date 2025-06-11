@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Catering Co.</title>
+    <style>
+        :root {
+            --primary: #8b5a2b; /* Rich coffee color */
+            --secondary: #d4a59a; /* Blush accent */
+            --light: #f8f1e9; /* Cream background */
+        }
+        body {
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.8;
+            background: var(--light);
+        }
+        header {
+            background: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .tagline {
+            font-style: italic;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 30px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        .cta-button:hover {
+            background: transparent;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h2:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+        /* Enhanced Menu Styling */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .menu-category {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .menu-category:hover {
+            transform: translateY(-10px);
+        }
+        .menu-category h3 {
+            color: var(--primary);
+            border-bottom: 1px dashed var(--secondary);
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .menu-item {
+            margin: 20px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        .menu-item:before {
+            content: "•";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        .price {
+            float: right;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lora', serif;
+        }
+        textarea {
+            min-height: 150px;
+        }
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: #6b4621;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Luxe Catering Co.</h1>
+        <p class="tagline">Where culinary artistry meets unforgettable events</p>
+        <a href="#contact" class="cta-button">Request a Quote</a>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Our Story</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">Since 2012, Luxe Catering has redefined event dining in the region. Our award-winning chefs combine seasonal ingredients with innovative techniques to create bespoke menus that delight the senses and elevate every occasion.</p>
+            
+            <div style="display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap;">
+                <div style="text-align: center; max-width: 250px;">
+                    <i class="fas fa-seedling" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3 style="color: var(--primary);">Farm-to-Table</h3>
+                    <p>We partner with local farms for the freshest ingredients</p>
+                </div>
+                <div style="text-align: center; max-width: 250px;">
+                    <i class="fas fa-utensils" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3 style="color: var(--primary);">Custom Menus</h3>
+                    <p>Every menu is tailored to your event's needs</p>
+                </div>
+                <div style="text-align: center; max-width: 250px;">
+                    <i class="fas fa-award" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3 style="color: var(--primary);">Award-Winning</h3>
+                    <p>Recognized by Culinary Institute of America</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2>Signature Offerings</h2>
+            
+            <div class="menu-grid">
+                <div class="menu-category">
+                    <h3>Wedding Collections</h3>
+                    <div class="menu-item">
+                        <span class="item-name">The Grand Affair</span>
+                        <span class="price">$85/person</span>
+                        <p>Five-course plated dinner with wine pairings</p>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Rustic Elegance</span>
+                        <span class="price">$65/person</span>
+                        <p>Farmhouse tables with family-style service</p>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Cocktail Reception</span>
+                        <span class="price">$45/person</span>
+                        <p>12 passed hors d'oeuvres with action stations</p>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Corporate Events</h3>
+                    <div class="menu-item">
+                        <span class="item-name">Executive Lunch</span>
+                        <span class="price">$32/person</span>
+                        <p>Artisan sandwiches, seasonal salads, and desserts</p>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Breakfast Boardroom</span>
+                        <span class="price">$28/person</span>
+                        <p>Fresh pastries, yogurt parfaits, and premium coffee</p>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Gala Dinner</span>
+                        <span class="price">$75/person</span>
+                        <p>Three-course meal with champagne toast</p>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Seasonal Specialties</h3>
+                    <div class="menu-item">
+                        <span class="item-name">Summer Garden Party</span>
+                        <span class="price">$55/person</span>
+                        <p>Farm-fresh salads, grilled seafood, and berry desserts</p>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Winter Comfort</span>
+                        <span class="price">$60/person</span>
+                        <p>Braised meats, root vegetables, and spiced desserts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Plan Your Event</h2>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type" name="event-type">
+                            <option value="wedding">Wedding</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="social">Social Gathering</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Estimated Guests</label>
+                        <input type="number" id="guests" name="guests" min="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Event Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Special Requests</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+            <a href="#" style="color: white;"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-pinterest fa-2x"></i></a>
+        </div>
+        <p>123 Culinary Avenue, Foodie City FC 12345 | (555) 987-6543 | events@luxecatering.com</p>
+        <p>&copy; 2023 Luxe Catering Co. All rights reserved.</p>
+    </footer>
+</body>
+</html>
